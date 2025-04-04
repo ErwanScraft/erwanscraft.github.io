@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Akun Saya | KG SURVIVAL</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <section class="profile-section">
+    <div class="profile-container">
+      <h2>Profil Akun</h2>
+
+      <!-- Info Akun -->
+      <div class="profile-info">
+        <p><strong>Email:</strong> <span id="userEmail"></span></p>
+        <p><strong>Verifikasi Email:</strong> <span id="emailVerified"></span> <button id="verifyEmailBtn">Kirim Verifikasi</button></p>
+
+        <label for="gametag">Gametag</label>
+        <input type="text" id="gametag" disabled />
+
+        <label for="whatsapp">Nomor WhatsApp</label>
+        <input type="text" id="whatsapp" disabled />
+
+        <button id="updateBtn" class="join-btn">Simpan Perubahan</button>
+        <button id="resetPasswordBtn" class="join-btn" style="background:orange;">Reset Password</button>
+        <button id="logoutBtn" class="join-btn" style="background:#dc3545;">Logout</button>
+        <button id="deleteBtn" class="join-btn" style="background:#6c757d;">Hapus Akun</button>
+      </div>
+
+      <!-- Tombol Kembali ke Menu Utama -->
+      <a href="../index.html" class="back-to-home-btn">Kembali ke Menu Utama</a>
+
+    </div>
+  </section>
+
+  <script type="module" src="account.js"></script>
+</body>
+</html>

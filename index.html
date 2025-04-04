@@ -1,42 +1,114 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KG SURVIVAL S1</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KG SURVIVAL S1</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="nav-toggle" onclick="toggleNavbar()">
-    <img src="images/menu.png" alt="Toggle Menu" id="menu-icon">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <!-- Bagian Kiri Header -->
+      <div class="nav-left">
+        <button class="nav-button" aria-label="Menu">&#9776;</button>
+        <a href="index.html" class="site-name">KG SURVIVAL S1</a>
+      </div>
+      
+      <!-- Bagian Kanan Header -->
+      <div class="nav-right">
+        <!-- Tombol Mode Malam -->
+        <button class="mode-toggle" id="modeToggle" title="Ganti mode malam/terang">
+          <i class="fas fa-moon"></i> <!-- Default: Ikon Bulan -->
+        </button>
+        <!-- Bagian Login Sementara di Abaikan -->
+        <!--a href=""><button class="login-btn">Login</button></a-->
+      </div>
+    </div>
+  </header>
+
+  <!-- Bagian Deskripsi Komunitas -->
+  <section class="description">
+    <div class="description-container">
+      <h1>SELAMAT DATANG</h1>
+      <!-- Gambar Slideshow -->
+      <div class="image-container">
+  <img id="slideshow-image" src="images/image1.jpg" alt="Gambar Slideshow Minecraft">
+  <div class="slideshow-indicators" id="slideshowIndicators"></div>
+  <p>KG SURVIVAL S1 adalah komunitas server minecraft yang mengutamakan kenyamanan member dalam bermain game mimecraft bersama teman.</p>
 </div>
 
-<div class="navbar" id="navbar">
-    <a href="index.html">Home</a>
-    <a href="#form">Form</a>
-    <a href="#gallery">Galery</a>
-    <a href="#contact">Contact</a>
-</div>
-    
-    <div class="logo">KG SURVIVAL S1</div>
-    
-    <div class="player-online">
-    <img src="images/minecraft-icon.png" alt="Minecraft Icon">
-    <span id="player-online">Memuat data pemain...</span>
-</div>
-    
-<div class="news">
-    <h2>Server KG SURVIVAL Kembali Beroperasi Penuh pada 3 April 2025</h2>
-    <p>Halo Survivors!</p>
-    <p>Kami ingin menginformasikan bahwa <strong>Server KG SURVIVAL</strong> akan kembali beroperasi penuh pada <strong>3 April 2025</strong>. Saat ini, owner sedang menikmati liburan Lebaran, sehingga sementara waktu <strong>tidak akan ada update atau perubahan pada server</strong>.</p>
-    <p>Namun, jangan khawatir! <strong>Server tetap online</strong>, dan kalian masih bisa bermain seperti biasa. Nikmati petualangan kalian, kumpulkan sumber daya, dan tetap jaga komunitas tetap aktif!</p>
-    <p>Terima kasih atas pengertiannya, dan kami tidak sabar untuk kembali memberikan update dan pengalaman terbaik untuk kalian setelah liburan!</p>
-    <p><strong>Salam,</strong><br>Tim KG SURVIVAL</p>
-</div>
-    
-    <div class="footer">&copy; 2025 KG SURVIVAL S1 - Semua Hak Dilindungi</div>
-    
-    <script src="script.js"></script>
+  <!-- Popup Gambar -->
+  <div id="imagePopup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" id="closePopup">&times;</span>
+      <img id="popup-image" src="" alt="Popup Image">
+      <p id="popup-text"></p>
+    </div>
+  </div>
+  
+  <!-- Bagian untuk Menampilkan Indikator Pemain Online -->
+<section class="server-status">
+  <div class="server-status-container">
+    <h2>Status Server Minecraft</h2>
+
+    <!-- Bagian awal yang hanya menampilkan status -->
+    <div class="status-card clickable" id="statusCard">
+      <p><strong>Status:</strong> <span id="playerStatus" class="offline">Offline</span></p>
+      <p><strong>Pemain Online:</strong> <span id="playerCount">Memuat...</span></p>
+    </div>
+
+    <!-- Bagian detail yang tersembunyi -->
+    <div class="status-details" id="statusDetails">
+      <div class="status-card">
+        <p><strong>Server IP:</strong> <span id="serverIP">gpnode2.mhsshopid.my.id:19135</span></p>
+      </div>
+      <div class="status-card">
+        <p><strong>Versi Server:</strong> <span id="serverVersion">Memuat...</span></p>
+      </div>
+      <div class="status-card">
+        <p><strong>Game Mode:</strong> <span>Survival</span></p>
+        <p><strong>Map:</strong> <span>KG SURVIVAL |¦ SEASON 1 ¦|</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  <!-- Bagian Berita Terbaru -->
+  <section class="news">
+    <div class="news-container">
+      <h2>📰 Berita Terbaru</h2>
+      <div class="news-list">
+        <!-- Berita 1 -->
+        <div class="news-card">
+          <img src="https://picsum.photos/300/200" alt="Berita 1">
+          <div class="news-content">
+            <h3>Kebijakan Jual Beli Uang Server - KG SURVIVAL S1</h3>
+            <p>Kami memperbaharui kebijakan jual beli uang server...</p>
+            <a href="news/berita1.html" class="read-more">Baca Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 KG SURVIVAL S1. Semua Hak Dilindungi.</p>
+      <div class="social-links">
+        <a href="#" class="social-icon"><i class="fab fa-discord"></i> Discord</a>
+        <a href="#" class="social-icon"><i class="fab fa-youtube"></i> YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Hubungkan Script -->
+  <script src="script.js"></script>
+  <script type="module" src="authRedirect.js"></script>
 </body>
 </html>
