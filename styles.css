@@ -682,6 +682,16 @@ body, .header, .description, .popup-content {
   color: #fff;
 }
 
+/* Status untuk Idle (Server Online tapi Tidak Ada Pemain) */
+.idle {
+  background-color: #f39c12; /* Warna kuning yang lebih netral */
+  color: #fff;
+}
+
+.idle:hover {
+  background-color: #e67e22; /* Warna sedikit lebih gelap saat hover */
+}
+
 .status-details {
   display: none;
   margin-top: 20px;
