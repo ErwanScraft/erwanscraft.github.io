@@ -610,146 +610,38 @@ body, .header, .description, .popup-content {
   }
 }
 
-/* Bagian Status Server */
-/* Bagian Status Server */
-.server-status {
-  background: #f4f4f4;
-  color: #333;
-  padding: 50px 20px;
-  border-radius: 15px;
-  max-width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.server-status h2 {
-  font-size: 32px;
-  text-align: center;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-.server-status-container {
+/* Container untuk Banner Status Server */
+.server-status-banner-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
-
-.status-card {
-  background-color: #fff;
-  border-radius: 10px;
+  margin-top: 30px; /* Memberikan sedikit ruang di atas */
   padding: 20px;
-  margin: 10px;
-  flex: 1;
-  min-width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s, color 0.3s;
 }
 
-.status-card p {
-  font-size: 18px;
-  color: #333;
-}
-
-.status-card span {
-  font-weight: 600;
-}
-
-.status-card p strong {
-  color: #5bc0de;
-}
-
-.indicator {
+/* Link Banner (Agar linknya responsif dan bisa diklik) */
+.server-status-banner-link {
   display: inline-block;
-  padding: 8px 20px;
-  border-radius: 25px;
-  font-weight: bold;
-  text-transform: capitalize;
-  font-size: 18px;
-  margin-top: 15px;
-  transition: background 0.3s, color 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px; /* Menambahkan sudut rounded */
+  overflow: hidden; /* Menghindari gambar keluar dari area link */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan ringan di sekitar banner */
 }
 
-.offline {
-  background-color: #e74c3c;
-  color: #fff;
+.server-status-banner-link:hover {
+  transform: scale(1.05); /* Efek memperbesar saat hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Meningkatkan bayangan saat hover */
 }
 
-.online {
-  background-color: #2ecc71;
-  color: #fff;
-}
-
-/* Status untuk Idle (Server Online tapi Tidak Ada Pemain) */
-.idle {
-  background-color: #f39c12; /* Warna kuning yang lebih netral */
-  color: #fff;
-}
-
-.idle:hover {
-  background-color: #e67e22; /* Warna sedikit lebih gelap saat hover */
-}
-
-.status-details {
-  display: none;
-  margin-top: 20px;
-  width: 100%;
-  animation: fadeIn 0.5s ease-out;
-}
-
-.status-details .status-card {
-  margin-top: 10px;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-.clickable {
-  cursor: pointer;
+/* Gambar Banner */
+.server-status-banner {
+  width: 100%; /* Gambar mengikuti lebar container */
+  height: auto; /* Menjaga rasio gambar tetap proporsional */
+  border-radius: 10px; /* Membuat sudut gambar rounded */
   transition: transform 0.3s ease;
 }
 
-.clickable:hover {
-  transform: scale(1.05);
-}
-
-/* Animasi untuk transisi masuk */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Dark mode */
-
-.dark-mode .server-status {
-  background-color: #333;
-}
-
-.dark-mode .status-card {
-  background-color: #444;
-  color: #f5f5f5;
-}
-
-.dark-mode .indicator.online {
-  background-color: #1abc9c;
-}
-
-.dark-mode .indicator.offline {
-  background-color: #e74c3c;
-}
-
-/* Responsivitas */
-@media (max-width: 768px) {
-  .server-status-container {
-    align-items: center;
-  }
-
-  .status-card {
-    min-width: 90%;
-  }
+/* Efek Hover pada Gambar Banner */
+.server-status-banner-link:hover .server-status-banner {
+  transform: scale(1.05); /* Efek memperbesar gambar saat hover */
 }

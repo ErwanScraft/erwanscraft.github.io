@@ -34,10 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Daftar gambar dan deskripsi
   const images = [
-    { src: "images/desc_img1.jpg", text: "Pemandangan dari tempat awal perjalanan server KG Survival S1 - Phase 1" },
-    { src: "images/desc_img2.jpg", text: "Momen member sedang bermain dengan para Helpers" },
-    { src: "images/desc_img3.jpg", text: "Bangunan dengan nuansa desert yang kental yang di bangun member kami." },
-    { src: "images/desc_img4.jpg", text: "Potret kebersamaan untuk melepas Season 1 - Phase 1" }
+    { src: "images/media_slide/desc_img1.jpg", text: "Pemandangan dari tempat awal perjalanan server KG Survival S1 - Phase 1" },
+    { src: "images/media_slide/desc_img2.jpg", text: "Momen member sedang bermain dengan para Helpers" },
+    { src: "images/media_slide/desc_img3.jpg", text: "Bangunan dengan nuansa desert yang kental yang di bangun member kami." },
+    { src: "images/media_slide/desc_img4.jpg", text: "Potret kebersamaan untuk melepas Season 1 - Phase 1" },
+    { src: "images/media_slide/desc_img5.jpg", text: "Potret Member kami yang sedang menaklukan Camber" }
   ];
 
   let currentImageIndex = 0;
@@ -70,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
       imagePopup.style.display = "none";
     }
   });
-  
+
   const imageContainer = document.querySelector(".image-container");
   let startX, endX;
 
@@ -87,63 +88,4 @@ document.addEventListener("DOMContentLoaded", function () {
       changeImage(-1);
     }
   });
-
-
-
-  const statusCard = document.getElementById('statusCard');
-  const statusDetails = document.getElementById('statusDetails');
-  const playerCountElement = document.getElementById('playerCount');
-  const playerStatusElement = document.getElementById('playerStatus');
-  const serverVersionElement = document.getElementById('serverVersion');
-  const serverIPElement = document.getElementById('serverIP');
-
-  // Mengambil data pemain online dari API server Minecraft
-  fetch('https://api.mcsrvstat.us/bedrock/3/gpnode2.mhsshopid.my.id:19135')
-  .then(response => response.json())
-  .then(data => {
-    if (data.online) {
-      const playerCount = data.players.online;
-      const serverVersion = data.version;
-
-      playerCountElement.textContent = playerCount;
-      serverVersionElement.textContent = serverVersion;
-
-      if (playerCount > 0) {
-        playerStatusElement.textContent = "Online";
-        playerStatusElement.classList.remove("idle");
-        playerStatusElement.classList.add("online");
-      } else {
-        playerStatusElement.textContent = "Idle";  // Status Idle jika tidak ada pemain
-        playerStatusElement.classList.remove("online");
-        playerStatusElement.classList.add("idle");
-      }
-    } else {
-      playerStatusElement.textContent = "Offline";
-      playerStatusElement.classList.remove("online", "idle");
-      playerStatusElement.classList.add("offline");
-      playerCountElement.textContent = "Server tidak tersedia";
-      serverVersionElement.textContent = "N/A";
-    }
-  })
-  .catch(err => {
-    console.error('Gagal mengambil status server:', err);
-    playerStatusElement.textContent = "Error";
-    playerStatusElement.classList.add("offline");
-    playerCountElement.textContent = "Gagal memuat data";
-    serverVersionElement.textContent = "N/A";
-  });
-
-  // Menangani klik pada status card untuk menampilkan detail server
-  statusCard.addEventListener("click", function () {
-    statusDetails.style.display = 'block';  // Menampilkan detail
-  });
-
-  // Menampilkan IP server hanya saat disentuh
-  serverIPElement.addEventListener("mouseenter", function () {
-    serverIPElement.style.color = "#5bc0de"; // Mengubah warna IP
-  });
-  serverIPElement.addEventListener("mouseleave", function () {
-    serverIPElement.style.color = "#333"; // Kembalikan warna ke normal
-  });
-  
 });

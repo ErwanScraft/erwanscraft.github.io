@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,8 +9,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
+<body>
+  
   <!-- Header -->
   <header class="header">
     <div class="header-container">
@@ -30,85 +32,70 @@
       </div>
     </div>
   </header>
-
+  
   <!-- Bagian Deskripsi Komunitas -->
   <section class="description">
     <div class="description-container">
       <h1>SELAMAT DATANG</h1>
       <!-- Gambar Slideshow -->
       <div class="image-container">
-  <img id="slideshow-image" src="images/image1.jpg" alt="Gambar Slideshow Minecraft">
-  <div class="slideshow-indicators" id="slideshowIndicators"></div>
-  <p>KG SURVIVAL S1 adalah komunitas server minecraft yang mengutamakan kenyamanan member dalam bermain game mimecraft bersama teman.</p>
-</div>
-
-  <!-- Popup Gambar -->
-  <div id="imagePopup" class="popup">
-    <div class="popup-content">
-      <span class="close-btn" id="closePopup">&times;</span>
-      <img id="popup-image" src="" alt="Popup Image">
-      <p id="popup-text"></p>
-    </div>
-  </div>
-  
-  <!-- Bagian untuk Menampilkan Indikator Pemain Online -->
-<section class="server-status">
-  <div class="server-status-container">
-    <h2>Status Server Minecraft</h2>
-
-    <!-- Bagian awal yang hanya menampilkan status -->
-    <div class="status-card clickable" id="statusCard">
-      <p><strong>Status:</strong> <span id="playerStatus" class="indicator offline">Offline</span></p>
-      <p><strong>Pemain Online:</strong> <span id="playerCount">Memuat...</span></p>
-    </div>
-
-    <!-- Bagian detail yang tersembunyi -->
-    <div class="status-details" id="statusDetails">
-      <div class="status-card">
-        <p><strong>Server IP:</strong> <span id="serverIP">gpnode2.mhsshopid.my.id:19135</span></p>
+        <img id="slideshow-image" src="images/media_slide/desc_img1.jpg" alt="Gambar Slideshow Minecraft">
+        <div class="slideshow-indicators" id="slideshowIndicators"></div>
+        <p>KG SURVIVAL S1 adalah komunitas server minecraft yang mengutamakan kenyamanan member dalam bermain game
+          mimecraft bersama teman.</p>
+        <a href="https://chat.whatsapp.com/CFu9meWRX9VHnJ12MliXTb"><button class="join-btn">Gabung</button></a>
       </div>
-      <div class="status-card">
-        <p><strong>Versi Server:</strong> <span id="serverVersion">Memuat...</span></p>
-      </div>
-      <div class="status-card">
-        <p><strong>Game Mode:</strong> <span>Survival</span></p>
-        <p><strong>Map:</strong> <span>KG SURVIVAL |¦ SEASON 1 ¦|</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-  
-  <!-- Bagian Berita Terbaru -->
-  <section class="news">
-    <div class="news-container">
-      <h2>📰 Berita Terbaru</h2>
-      <div class="news-list">
-        <!-- Berita 1 -->
-        <div class="news-card">
-          <img src="https://picsum.photos/300/200" alt="Berita 1">
-          <div class="news-content">
-            <h3>Kebijakan Jual Beli Uang Server - KG SURVIVAL S1</h3>
-            <p>Kami memperbaharui kebijakan jual beli uang server...</p>
-            <a href="news/berita1.html" class="read-more">Baca Selengkapnya</a>
-          </div>
+      
+      <!-- Popup Gambar -->
+      <div id="imagePopup" class="popup">
+        <div class="popup-content">
+          <span class="close-btn" id="closePopup">&times;</span>
+          <img id="popup-image" src="" alt="Popup Image">
+          <p id="popup-text"></p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <p>&copy; 2025 KG SURVIVAL S1. Semua Hak Dilindungi.</p>
-      <div class="social-links">
-        <a href="#" class="social-icon"><i class="fab fa-discord"></i> Discord</a>
-        <a href="#" class="social-icon"><i class="fab fa-youtube"></i> YouTube</a>
+    
+      
+      <!-- Bagian untuk Menampilkan Server Status Banner -->
+      <div class="server-status-banner-container">
+        <a href="https://minecraftpocket-servers.com/server/130569/" target="_blank" class="server-status-banner-link">
+          <img src="https://minecraftpocket-servers.com/server/130569/banners/regular-banner-5.png" alt="KG Survival S1 Server Banner"
+                                                                                                                                  class="server-status-banner">
+        </a>
       </div>
-    </div>
-  </footer>
-
-  <!-- Hubungkan Script -->
-  <script src="script.js"></script>
-  <script type="module" src="authRedirect.js"></script>
+      
+      <!-- Bagian Berita Terbaru -->
+      <section class="news">
+        <div class="news-container">
+          <h2>📰 Berita Terbaru</h2>
+          <div class="news-list">
+            <!-- Berita 1 -->
+            <div class="news-card">
+              <img src="images/news/shop.png" alt="Berita 1">
+              <div class="news-content">
+                <h3>Kebijakan Jual Beli Uang Server - KG SURVIVAL S1</h3>
+                <p>Kami memperbaharui kebijakan jual beli uang server...</p>
+                <a href="news/berita1.html" class="read-more">Baca Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-container">
+          <p>&copy; 2025 KG SURVIVAL S1. Semua Hak Dilindungi.</p>
+          <div class="social-links">
+            <a href="https://discord.gg/Dzanu7nRh3" class="social-icon"><i class="fab fa-discord"></i> Discord</a>
+            <a href="" class="social-icon"><i class="fab fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </footer>
+      
+      <!-- Hubungkan Script -->
+      <script src="script.js"></script>
+      <script type="module" src="authRedirect.js"></script>
 </body>
+
 </html>
