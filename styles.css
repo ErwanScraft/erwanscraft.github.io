@@ -726,3 +726,113 @@ body, .header, .description, .popup-content {
 .close-btn:hover {
   color: red;
 }
+
+
+
+/* Tombol Nether Portal Mengambang yang Tersembunyi */
+.portal-button {
+  position: fixed;
+  bottom: 20px; /* Menempatkan tombol di bawah */
+  right: 20px; /* Menempatkan tombol di kanan */
+  padding: 0;
+  background-color: transparent;
+  border-radius: 10px; /* Membuat sudut agak melengkung */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  cursor: pointer;
+  display: none; /* Tombol tersembunyi secara default */
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Tombol muncul saat scroll ke bawah atau trigger */
+.portal-button.show {
+  display: flex;
+  opacity: 1;
+}
+
+/* Efek saat tombol dihover */
+.portal-button:hover {
+  transform: scale(1.1); /* Efek pembesaran tombol */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Menambahkan bayangan saat hover */
+}
+
+/* Ikon Nether Portal */
+.nether-portal-img {
+  width: 60px; /* Ukuran gambar portal */
+  height: 60px; /* Ukuran gambar portal */
+  border-radius: 10px; /* Menyesuaikan dengan bentuk tombol portal */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek saat tombol diklik (seperti masuk portal) */
+.portal-button:active .nether-portal-img {
+  transform: scale(0.95); /* Efek mengecil saat tombol ditekan */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Efek glowing saat ditekan */
+}
+
+/* Partikel di sekitar Nether Portal */
+.particles {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+  border-radius: 50%;
+  animation: particleEffect 1s infinite ease-in-out;
+  z-index: -1;
+}
+
+/* Animasi partikel */
+@keyframes particleEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* Efek tambahan untuk memasuki portal */
+.portal-button:active .particles {
+  animation: particleEffectActive 0.5s ease-in-out forwards;
+}
+
+/* Animasi partikel saat tombol ditekan */
+@keyframes particleEffectActive {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Efek glow portal */
+.portal-container {
+  position: relative;
+}
+
+.portal-button:active .portal-container {
+  animation: portalGlow 0.3s ease-out forwards;
+}
+
+/* Animasi glowing portal */
+@keyframes portalGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 0, 255, 1); /* Awal glow */
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0); /* Akhir glow */
+  }
+}

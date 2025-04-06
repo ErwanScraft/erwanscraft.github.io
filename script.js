@@ -116,4 +116,24 @@ document.addEventListener("DOMContentLoaded", function () {
       popupNav.classList.remove("show"); // Menutup popup jika klik di luar area konten
     }
   });
+
+
+  const portalButton = document.querySelector('.portal-button');
+  
+  // Menampilkan tombol setelah scroll ke bawah
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) { // Tampilkan tombol jika scroll lebih dari 300px
+      portalButton.classList.add('show');
+    } else {
+      portalButton.classList.remove('show');
+    }
+  });
+
+  // Menambahkan animasi saat tombol diklik
+  portalButton.addEventListener('click', function () {
+    portalButton.classList.add('active'); // Efek animasi saat tombol diklik
+    setTimeout(() => {
+      portalButton.classList.remove('active');
+    }, 500); // Menghilangkan efek animasi setelah setengah detik
+  });
 });
