@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentImageIndex = 0;
 
   // Fungsi untuk mengganti gambar otomatis setiap 5 detik
-  function changeImage() {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
+  function changeImage(direction = 1) {
+    currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
     slideshowImage.src = images[currentImageIndex].src;
     slideshowImage.alt = images[currentImageIndex].text;
   }
@@ -86,6 +86,34 @@ document.addEventListener("DOMContentLoaded", function () {
       changeImage(1);
     } else if (endX - startX > 50) { // Geser kanan
       changeImage(-1);
+    }
+  });
+
+  // Ambil elemen-elemen yang dibutuhkan
+  const navToggle = document.getElementById("navToggle");
+  const popupNav = document.getElementById("popupNav");
+  const closeNavPopup = document.getElementById("closeNavPopup");
+
+  // Pastikan elemen-elemen ada
+  if (!navToggle || !popupNav || !closeNavPopup) {
+    console.warn("Elemen-elemen popup atau tombol tidak ditemukan.");
+    return;
+  }
+
+  // Tampilkan popup saat tombol nav-toggle ditekan
+  navToggle.addEventListener("click", function () {
+    popupNav.classList.toggle("show"); // Menambahkan kelas 'show' untuk animasi
+  });
+
+  // Tutup popup saat tombol close ditekan
+  closeNavPopup.addEventListener("click", function () {
+    popupNav.classList.remove("show"); // Menghapus kelas 'show' untuk menutup popup
+  });
+
+  // Tutup popup jika klik di luar konten popup
+  popupNav.addEventListener("click", function (event) {
+    if (event.target === popupNav) {
+      popupNav.classList.remove("show"); // Menutup popup jika klik di luar area konten
     }
   });
 });

@@ -17,9 +17,10 @@
     <div class="header-container">
       <!-- Bagian Kiri Header -->
       <div class="nav-left">
-        <button class="nav-button" aria-label="Menu">&#9776;</button>
+        <button class="nav-button" id="navToggle" aria-label="Menu">&#9776;</button>
         <a href="index.html" class="site-name">KG SURVIVAL S1</a>
       </div>
+      
       
       <!-- Bagian Kanan Header -->
       <div class="nav-right">
@@ -32,6 +33,19 @@
       </div>
     </div>
   </header>
+  
+  <!-- Popup Menu Navigasi -->
+  <div id="popupNav" class="popup-nav">
+    <div class="popup-nav-content">
+      <button class="close-btn" id="closeNavPopup">&times;</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="">Gallery</a></li>
+        <li><a href="arsip/arsip_server.html">Arsip Server</a></li>
+        <li><a href="">Tentang</a></li>
+      </ul>
+    </div>
+  </div>
   
   <!-- Bagian Deskripsi Komunitas -->
   <section class="description">
@@ -54,7 +68,7 @@
           <p id="popup-text"></p>
         </div>
       </div>
-    
+      
       
       <!-- Bagian untuk Menampilkan Server Status Banner -->
       <div class="server-status-banner-container">

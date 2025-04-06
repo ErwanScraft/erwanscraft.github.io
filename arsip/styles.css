@@ -1,0 +1,80 @@
+/* Arsip Server */
+.server-archive {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.server-archive .container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.server-archive h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.server-archive img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.server-archive p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.archive-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.archive-item h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.archive-item p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.download-btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
