@@ -1,4 +1,4 @@
-/* Reset dasar */
+>/* Reset dasar */
 * {
   margin: 0;
   padding: 0;
@@ -199,6 +199,37 @@ body {
 .join-btn:hover {
   background-color: #218838;
   transform: translateY(-2px);
+}
+
+.join-btn-form {
+  background-color: #007bff; /* Biru resmi yang memberi kesan profesional */
+  color: white; /* Teks berwarna putih agar jelas terbaca */
+  border: 2px solid #0056b3; /* Border biru lebih gelap untuk memberikan kesan kuat */
+  padding: 14px 40px; /* Padding lebih besar agar tombol lebih menonjol */
+  font-size: 18px; /* Ukuran font sedikit lebih besar untuk menarik perhatian */
+  font-weight: bold; /* Menebalkan teks untuk menambah kesan penting */
+  text-align: center; /* Teks di tengah */
+  text-decoration: none; /* Menghilangkan underline */
+  display: inline-block; /* Menyusun tombol secara inline */
+  border-radius: 5px; /* Sudut tombol melengkung untuk tampilan yang lebih lembut */
+  transition: background-color 0.3s, transform 0.3s, border 0.3s; /* Efek transisi yang mulus */
+}
+
+.join-btn-form:hover {
+  background-color: #0056b3; /* Warna tombol lebih gelap saat hover */
+  border-color: #004085; /* Border menjadi lebih gelap saat hover */
+  transform: translateY(-3px); /* Efek tombol sedikit terangkat saat hover */
+}
+
+.join-btn-form:active {
+  background-color: #004085; /* Warna tombol lebih gelap saat ditekan */
+  border-color: #003366; /* Border menjadi lebih gelap saat ditekan */
+  transform: translateY(1px); /* Efek tombol sedikit turun saat ditekan */
+}
+
+.join-btn-form:focus {
+  outline: none; /* Menghilangkan outline saat fokus */
+  box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5); /* Menambahkan efek focus dengan border biru terang */
 }
 
 /* Container Gambar */
