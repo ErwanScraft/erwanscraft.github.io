@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KG COMMUNITY - Gallery</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <!-- Bagian Kiri Header -->
+      <div class="nav-left">
+        <button class="nav-button" id="navToggle" aria-label="Menu">&#9776;</button>
+        <a href="index.html">
+          <img src="images/logo.png" alt="KG COMMUNITY" class="site-logo">
+        </a>
+      </div>
+
+      <!-- Bagian Kanan Header -->
+      <div class="nav-right">
+        <!-- Tombol Mode Malam -->
+        <button class="mode-toggle" id="modeToggle" title="Ganti mode malam/terang">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Popup Menu Navigasi -->
+  <div id="popupNav" class="popup-nav">
+    <div class="popup-nav-content">
+      <button class="close-btn" id="closeNavPopup">&times;</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="archive.html">Arsip Server</a></li>
+        <li><a href="about.html">Tentang</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <h1>Galeri KG COMMUNITY</h1>
+
+    <!-- Kategori Season 1 -->
+    <div class="category-container">
+        <h2 class="category-title">Season 1</h2>
+        <div class="category-gallery" style="display: none;">
+            <!-- Phase 1 -->
+            <div class="gallery-item">
+                <img src="images/gallery/s1p1_image_1.jpg" alt="Season 1 - Phase 1">
+                <div class="photo-description" style="display: none;">
+                    <p>Pemandangan dari tempat awal perjalanan server KGSMP S1 Phase 1.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery/s1p1_image_2.jpg" alt="Season 1 - Phase 1">
+                <div class="photo-description" style="display: none;">
+                    <p>Bangunan dengan nuansa desert yang kental yang dibangun oleh member kami.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="images/gallery/s1p1_image_3.jpg" alt="Season 1 - Phase 1">
+                <div class="photo-description" style="display: none;">
+                    <p>Momen member sedang melepas KGSMP S1 Phase 1.</p>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="gallery-item">
+                <img src="images/gallery/s1p2_image_1.jpg" alt="Season 1 - Phase 2">
+                <div class="photo-description" style="display: none;">
+                    <p>Bangunan sederhana dan estetik dibuat oleh dhoo1235478.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="images/gallery/s1p2_image_2.jpg" alt="Season 1 - Phase 2">
+                <div class="photo-description" style="display: none;">
+                    <p>Piglin Farm yang sempat membuat Server Delay dibuat oleh MSVPNK.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kategori Season 2 (Kosong untuk sementara) -->
+    <div class="category-container">
+        <h2 class="category-title">Season 2</h2>
+        <div class="category-gallery" style="display: none;">
+            <!-- Phase 1 -->
+            <div class="gallery-item">
+                <img src="images/gallery/soon.jpg" alt="Season 2 - Phase 1">
+                <div class="photo-description" style="display: none;">
+                    <p>Akan Hadir Season 2.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 KG COMMUNITY. Semua Hak Dilindungi.</p>
+      <div class="social-links">
+        <a href="https://discord.gg/Dzanu7nRh3" class="social-icon"><i class="fab fa-discord"></i> Discord</a>
+        <a href="" class="social-icon"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Hubungkan Script -->
+  <script src="script.js"></script>
+</body>
+</html>

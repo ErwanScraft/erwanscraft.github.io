@@ -20,78 +20,96 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   if (window.location.pathname === '/index.html') {
-  
-  // Ambil elemen-elemen yang diperlukan untuk slideshow dan popup
-  const slideshowImage = document.getElementById("slideshow-image");
-  const imagePopup = document.getElementById("imagePopup");
-  const popupImage = document.getElementById("popup-image");
-  const popupText = document.getElementById("popup-text");
-  const closePopup = document.getElementById("closePopup");
+    // Ambil elemen-elemen yang diperlukan untuk slideshow dan popup
+    const slideshowImage = document.getElementById("slideshow-image");
+    const imagePopup = document.getElementById("imagePopup");
+    const popupImage = document.getElementById("popup-image");
+    const popupText = document.getElementById("popup-text");
+    const closePopup = document.getElementById("closePopup");
 
-  // Pastikan semua elemen ada sebelum menjalankan skrip
-  if (!slideshowImage || !imagePopup || !popupImage || !popupText || !closePopup) {
-    console.warn("Elemen slideshow atau popup tidak ditemukan.");
-    return;
-  }
+    // Pastikan semua elemen ada sebelum menjalankan skrip
+    if (!slideshowImage || !imagePopup || !popupImage || !popupText || !closePopup) {
+      console.warn("Elemen slideshow atau popup tidak ditemukan.");
+      return;
+    }
 
-  // Daftar gambar dan deskripsi
-  const images = [
-    { src: "images/media_slide/desc_img1.jpg", text: "Pemandangan dari tempat awal perjalanan server KG Survival S1 - Phase 1" },
-    { src: "images/media_slide/desc_img2.jpg", text: "Momen member sedang bermain dengan para Helpers" },
-    { src: "images/media_slide/desc_img3.jpg", text: "Bangunan dengan nuansa desert yang kental yang di bangun member kami." },
-    { src: "images/media_slide/desc_img4.jpg", text: "Potret kebersamaan untuk melepas Season 1 - Phase 1" },
-    { src: "images/media_slide/desc_img5.jpg", text: "Potret Member kami yang sedang menaklukan Camber" }
-  ];
+    // Daftar gambar dan deskripsi
+    const images = [
+      { src: "images/media_slide/desc_img1.jpg", text: "Pemandangan dari tempat awal perjalanan server KG Survival S1 - Phase 1" },
+      { src: "images/media_slide/desc_img2.jpg", text: "Momen member sedang bermain dengan para Helpers" },
+      { src: "images/media_slide/desc_img3.jpg", text: "Bangunan dengan nuansa desert yang kental yang di bangun member kami." },
+      { src: "images/media_slide/desc_img4.jpg", text: "Potret kebersamaan untuk melepas Season 1 - Phase 1" },
+      { src: "images/media_slide/desc_img5.jpg", text: "Potret Member kami yang sedang menaklukan Camber" }
+    ];
 
-  let currentImageIndex = 0;
+    let currentImageIndex = 0;
 
-  // Fungsi untuk mengganti gambar otomatis setiap 5 detik
-  function changeImage(direction = 1) {
-    currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-    slideshowImage.src = images[currentImageIndex].src;
-    slideshowImage.alt = images[currentImageIndex].text;
-  }
+    // Fungsi untuk mengganti gambar otomatis setiap 5 detik
+    function changeImage(direction = 1) {
+      currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+      slideshowImage.src = images[currentImageIndex].src;
+      slideshowImage.alt = images[currentImageIndex].text;
+    }
 
-  // Jalankan slideshow otomatis
-  setInterval(changeImage, 5000);
+    // Jalankan slideshow otomatis
+    setInterval(changeImage, 5000);
 
-  // Klik gambar untuk membuka popup
-  slideshowImage.addEventListener("click", function () {
-    popupImage.src = images[currentImageIndex].src;
-    popupText.textContent = images[currentImageIndex].text;
-    imagePopup.style.display = "flex";
-  });
+    // Klik gambar untuk membuka popup
+    slideshowImage.addEventListener("click", function () {
+      popupImage.src = images[currentImageIndex].src;
+      popupText.textContent = images[currentImageIndex].text;
+      imagePopup.style.display = "flex";
+    });
 
-  // Tutup popup
-  closePopup.addEventListener("click", function () {
-    imagePopup.style.display = "none";
-  });
-
-  // Tutup popup jika klik di luar kontennya
-  imagePopup.addEventListener("click", function (event) {
-    if (event.target === imagePopup) {
+    // Tutup popup
+    closePopup.addEventListener("click", function () {
       imagePopup.style.display = "none";
-    }
-  });
+    });
 
-  const imageContainer = document.querySelector(".image-container");
-  let startX, endX;
+    // Tutup popup jika klik di luar kontennya
+    imagePopup.addEventListener("click", function (event) {
+      if (event.target === imagePopup) {
+        imagePopup.style.display = "none";
+      }
+    });
 
-  // Event listener untuk geser kiri/kanan
-  imageContainer.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
+    const imageContainer = document.querySelector(".image-container");
+    let startX, endX;
 
-  imageContainer.addEventListener("touchend", (e) => {
-    endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) { // Geser kiri
-      changeImage(1);
-    } else if (endX - startX > 50) { // Geser kanan
-      changeImage(-1);
-    }
-  });
+    // Event listener untuk geser kiri/kanan
+    imageContainer.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    imageContainer.addEventListener("touchend", (e) => {
+      endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) { // Geser kiri
+        changeImage(1);
+      } else if (endX - startX > 50) { // Geser kanan
+        changeImage(-1);
+      }
+    });
+
+    const portalButton = document.querySelector('.portal-button');
+
+    // Menampilkan tombol setelah scroll ke bawah
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 300) { // Tampilkan tombol jika scroll lebih dari 300px
+        portalButton.classList.add('show');
+      } else {
+        portalButton.classList.remove('show');
+      }
+    });
+
+    // Menambahkan animasi saat tombol diklik
+    portalButton.addEventListener('click', function () {
+      portalButton.classList.add('active'); // Efek animasi saat tombol diklik
+      setTimeout(() => {
+        portalButton.classList.remove('active');
+      }, 500); // Menghilangkan efek animasi setelah setengah detik
+    });
   }
-  
+
   // Ambil elemen-elemen yang dibutuhkan
   const navToggle = document.getElementById("navToggle");
   const popupNav = document.getElementById("popupNav");
@@ -120,28 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-
-  const portalButton = document.querySelector('.portal-button');
-  
-  // Menampilkan tombol setelah scroll ke bawah
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 300) { // Tampilkan tombol jika scroll lebih dari 300px
-      portalButton.classList.add('show');
-    } else {
-      portalButton.classList.remove('show');
-    }
-  });
-
-  // Menambahkan animasi saat tombol diklik
-  portalButton.addEventListener('click', function () {
-    portalButton.classList.add('active'); // Efek animasi saat tombol diklik
-    setTimeout(() => {
-      portalButton.classList.remove('active');
-    }, 500); // Menghilangkan efek animasi setelah setengah detik
-    
-  // Bagian Arsip
-  
-  // Animasi pada halaman
+  // Animasi pada halaman arsip
   const archiveItems = document.querySelectorAll('.archive-item');
 
   archiveItems.forEach((item, index) => {
@@ -151,5 +148,33 @@ document.addEventListener("DOMContentLoaded", function () {
       item.style.transition = 'all 0.5s ease-out';
     }, index * 300); // Menambahkan delay pada setiap item arsip
   });
+
+  // Dapatkan semua kategori
+  const categories = document.querySelectorAll('.category-title');
+
+  categories.forEach(category => {
+    category.addEventListener('click', function () {
+      const gallery = category.nextElementSibling; // Mengambil galeri di bawah kategori
+      const isVisible = gallery.style.display === 'grid';
+
+      // Toggle tampilan galeri kategori
+      gallery.style.display = isVisible ? 'none' : 'grid';
+    });
+  });
+
+  // Menambahkan interaksi pada gambar di dalam kategori
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  galleryItems.forEach(item => {
+    const image = item.querySelector('img');
+    const description = item.querySelector('.photo-description');
+
+    // Ketika gambar diklik, tampilkan atau sembunyikan deskripsi
+    image.addEventListener('click', function () {
+      const isVisible = description.style.display === 'block';
+
+      // Toggle deskripsi
+      description.style.display = isVisible ? 'none' : 'block';
+    });
   });
 });
