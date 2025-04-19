@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
     modeIcon?.classList.replace(isDarkMode ? "fa-moon" : "fa-sun", isDarkMode ? "fa-sun" : "fa-moon");
   });
 
+  if (window.location.pathname === '/index.html') {
+  
   // Ambil elemen-elemen yang diperlukan untuk slideshow dan popup
   const slideshowImage = document.getElementById("slideshow-image");
   const imagePopup = document.getElementById("imagePopup");
@@ -88,7 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
       changeImage(-1);
     }
   });
-
+  }
+  
   // Ambil elemen-elemen yang dibutuhkan
   const navToggle = document.getElementById("navToggle");
   const popupNav = document.getElementById("popupNav");
@@ -135,5 +138,18 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       portalButton.classList.remove('active');
     }, 500); // Menghilangkan efek animasi setelah setengah detik
+    
+  // Bagian Arsip
+  
+  // Animasi pada halaman
+  const archiveItems = document.querySelectorAll('.archive-item');
+
+  archiveItems.forEach((item, index) => {
+    setTimeout(() => {
+      item.style.opacity = 1;
+      item.style.transform = 'translateY(0)';
+      item.style.transition = 'all 0.5s ease-out';
+    }, index * 300); // Menambahkan delay pada setiap item arsip
+  });
   });
 });
